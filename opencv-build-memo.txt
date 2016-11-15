@@ -1,0 +1,5 @@
+Intelij IDEAでjava用OpenCV
+File->Project Structure->Libraries->opencv\build\java\opencv-310.jarのパス追加
+Run->Edit Configurations->VM options:に -Djava.library.path=D:/opencv/build/java/x64を追加
+System.loadLibrary(Core.NATIVE_LIBRARY_NAME); // OpenCV Load
+を最初に追加
