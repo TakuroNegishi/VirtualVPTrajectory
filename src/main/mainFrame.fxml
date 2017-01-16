@@ -24,11 +24,33 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin></Label>
-            <Slider fx:id="scaleSlider" max="200.0" min="10.0" value="50.0" />
-            <Button mnemonicParsing="false" onAction="#OnHeightReset" text="Height Reset (50m)">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin></Button>
+            <Slider fx:id="scaleSlider" max="50.0" min="1" value="6.0" />
+            <HBox prefHeight="19.0" prefWidth="640.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#OnHeightReset" text="Height Reset (6m)">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <CheckBox fx:id="leftWallCB" mnemonicParsing="false" onAction="#OnSelectedLeftWall" text="左壁">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="floorCB" mnemonicParsing="false" onAction="#OnSelectedFloor" text="床">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="rightWallCB" mnemonicParsing="false" onAction="#OnSelectedRightWall" text="右壁">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="8.0" />
+                  <CheckBox fx:id="drawPrevProjCB" mnemonicParsing="false" onAction="#OnSelectedPrevProj" text="Prev" />
+               </children>
+            </HBox>
             <TextArea fx:id="logTextArea" prefHeight="150.0" prefWidth="640.0" />
             <LineChart fx:id="vpLineChart">
               <xAxis>
@@ -85,11 +107,6 @@
                </HBox.margin>
             </CheckBox>
             <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="8.0" />
-            <Button mnemonicParsing="false" onAction="#OnRouteBtn" text="Route">
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-            </Button>
             <Button mnemonicParsing="false" onAction="#OnRouteNextBtn" text="Route Next">
                <HBox.margin>
                   <Insets left="10.0" />

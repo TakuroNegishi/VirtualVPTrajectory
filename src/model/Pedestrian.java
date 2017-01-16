@@ -11,13 +11,13 @@ public class Pedestrian {
     private double eyeY;
     private double direction; // °
 
-    private final double INIT_EYE_X = 0;
-    private final double INIT_EYE_Y = 10; // 10m
+//    private final double INIT_EYE_X = 0;
+//    private final double INIT_EYE_Y = 10; // 10m
 
-    public static final double DIR_NORTH = 90;
-    public static final double DIR_EAST = 0;
-    public static final double DIR_WEST = 180;
-    public static final double DIR_SOUTH = 270;
+    private static final double DIR_NORTH = 90;
+    private static final double DIR_EAST = 0;
+    private static final double DIR_WEST = 180;
+    private static final double DIR_SOUTH = 270;
 
     private double[] xList;
     private double[] yList;
@@ -25,8 +25,10 @@ public class Pedestrian {
     private int routeIndex;
 
     public Pedestrian() {
-        ArrayList<String> lines = Util.read("./points.csv");
-        int lineNum = lines.size();
+//        ArrayList<String> lines = Util.read("./trajectory.csv");
+        ArrayList<String> lines = Util.read("./trajectory_rotate.csv");
+        int lineNum = 0;
+        if (lines != null) lineNum = lines.size();
         xList = new double[lineNum];
         yList = new double[lineNum];
         dList = new double[lineNum];
@@ -42,8 +44,8 @@ public class Pedestrian {
     public void reset() {
         x = 0;
         y = 0;
-        eyeX = INIT_EYE_X;
-        eyeY = INIT_EYE_Y;
+//        eyeX = INIT_EYE_X;
+//        eyeY = INIT_EYE_Y;
         direction = DIR_NORTH;
         routeIndex = 0;
     }
@@ -97,25 +99,25 @@ public class Pedestrian {
         return y;
     }
 
-    public double getEyeX() {
-        return eyeX;
-    }
+//    public double getEyeX() {
+//        return eyeX;
+//    }
 
-    public double getEyeY() {
-        return eyeY;
-    }
+//    public double getEyeY() {
+//        return eyeY;
+//    }
 
     public double getDirection() {
         return direction;
     }
 
-    public double getINIT_EYE_X() {
-        return INIT_EYE_X;
-    }
+//    public double getINIT_EYE_X() {
+//        return INIT_EYE_X;
+//    }
 
-    public double getINIT_EYE_Y() {
-        return INIT_EYE_Y;
-    }
+//    public double getINIT_EYE_Y() {
+//        return INIT_EYE_Y;
+//    }
 
     public double getXListElem() {
         return  xList[routeIndex];

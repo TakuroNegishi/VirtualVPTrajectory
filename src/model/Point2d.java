@@ -23,8 +23,4 @@ public class Point2d {
         y = p.y;
     }
 
-    public void makeSameValue(Point p) {
-        x = p.x;
-        y = p.y;
-    }
 }
